@@ -1,0 +1,39 @@
+.DS_Store
+.vscode
+tmp_site/
+node_modules/
+
+# ZeppelinOS
+zos.dev-*.json
+.zos.session
+
+# Artifacts
+unlock-app/src/artifacts/
+smart-contracts/build/
+builds/
+
+/subgraph/subgraph.yaml
+
+# dot env files
+.env.*.local
+/smart-contracts/zos.development.json
+
+# npm files as we use yarn
+package-lock.json
+yarn-error.log
+
+# yarn v2
+.yarn/*
+.pnp.js
+# !.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+.eslintcache
+
+# Local Netlify folder
+.netlify
+.vercel

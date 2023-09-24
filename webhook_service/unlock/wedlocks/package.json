@@ -1,0 +1,41 @@
+{
+  "name": "@unlock-protocol/wedlocks",
+  "version": "1.0.0",
+  "description": "The email server for Unlock",
+  "main": "src/server.js",
+  "dependencies": {
+    "@babel/cli": "7.21.5",
+    "@babel/core": "7.22.1",
+    "@babel/node": "7.22.1",
+    "@babel/preset-env": "7.22.4",
+    "@typescript-eslint/parser": "6.2.1",
+    "@unlock-protocol/eslint-config": "workspace:./packages/eslint-config",
+    "babel-loader": "9.1.3",
+    "babel-plugin-wildcard": "7.0.0",
+    "dotenv": "16.1.3",
+    "eslint": "8.46.0",
+    "handlebars": "4.7.8",
+    "netlify-cli": "15.4.1",
+    "node-forge": "1.3.1",
+    "nodemailer": "6.9.4",
+    "prettier": "3.0.0",
+    "typescript": "5.1.6",
+    "winston": "3.9.0"
+  },
+  "scripts": {
+    "build": "netlify build",
+    "dev": "UNLOCK_ENV=dev netlify functions:serve",
+    "test": "UNLOCK_ENV=test vitest run --coverage --environment=node",
+    "lint": "eslint --resolve-plugins-relative-to ../packages/eslint-config --ext .ts,.js src/",
+    "ci": "yarn test && yarn lint",
+    "deploy-netlify": "./scripts/deploy-netlify.sh"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "7.22.4",
+    "@vitest/coverage-c8": "0.31.4",
+    "regenerator-runtime": "0.13.11",
+    "vitest": "0.31.4"
+  }
+}

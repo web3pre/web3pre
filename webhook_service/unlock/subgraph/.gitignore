@@ -1,0 +1,13 @@
+build/
+generated/
+node_modules/
+
+tests/.latest.json
+tests/.bin
+*.wasm
+
+# generated files
+subgraph.yaml
+networks.json
+/abis
+/config

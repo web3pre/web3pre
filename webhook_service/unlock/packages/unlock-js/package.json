@@ -1,0 +1,64 @@
+{
+  "name": "@unlock-protocol/unlock-js",
+  "version": "0.39.3",
+  "description": "This module provides libraries to include Unlock APIs inside a Javascript application.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unlock-protocol/unlock.git",
+    "directory": "packages/unlock-js"
+  },
+  "scripts": {
+    "test": "yarn clean && yarn build:abis && yarn build:lib && vitest",
+    "test:single": "hardhat test:single",
+    "check": "tsc --noEmit",
+    "lint": "yarn run eslint --resolve-plugins-relative-to ../eslint-config --ext .tsx,.ts,.js src/",
+    "build:lib": "tsup src/index.ts --dts --format esm,cjs ",
+    "build:abis": "node ./scripts/compressAbi.js",
+    "build": "yarn clean && yarn generate && yarn build:abis && yarn build:lib",
+    "clean": "rm -rf lib esm cache coverage src/__tests__/contracts src/__tests__/artifacts",
+    "ci": "yarn test && yarn lint && yarn build",
+    "prepublishOnly": "yarn build",
+    "grant-keys": "node ./scripts/grant-keys.js",
+    "generate:locksmith": "openapi-generator-cli generate -i ./openapi.yml -g typescript-axios -c ./openapi.ts.config.json -o ./src/@generated/client",
+    "generate:subgraph": "yarn graphql-codegen",
+    "generate": "yarn generate:locksmith && yarn generate:subgraph"
+  },
+  "author": "Unlock Inc",
+  "license": "MIT",
+  "peerDependencies": {
+    "axios": "1.4.0",
+    "ethers": "^5.7.x"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.22.9",
+    "@babel/core": "7.22.9",
+    "@babel/preset-env": "7.22.9",
+    "@graphql-codegen/cli": "4.0.1",
+    "@graphql-codegen/typescript": "4.0.1",
+    "@graphql-codegen/typescript-graphql-request": "5.0.0",
+    "@graphql-codegen/typescript-operations": "4.0.1",
+    "@nomiclabs/hardhat-ethers": "2.2.3",
+    "@openapitools/openapi-generator-cli": "2.7.0",
+    "@unlock-protocol/contracts": "workspace:./packages/contracts",
+    "@unlock-protocol/eslint-config": "workspace:./packages/eslint-config",
+    "@unlock-protocol/networks": "workspace:./packages/networks",
+    "@unlock-protocol/types": "workspace:./packages/types",
+    "eslint": "8.46.0",
+    "hardhat": "2.17.2",
+    "prettier": "3.0.0",
+    "tsup": "7.2.0",
+    "typescript": "5.1.6",
+    "vitest": "0.34.1"
+  },
+  "dependencies": {
+    "@uniswap/sdk-core": "4.0.6",
+    "@uniswap/smart-order-router": "3.16.21",
+    "graphql": "16.7.1",
+    "graphql-request": "6.1.0",
+    "react-to-print": "2.14.13",
+    "siwe": "2.1.4"
+  }
+}

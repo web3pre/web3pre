@@ -1,0 +1,113 @@
+{
+  "manifestVersion": "3.2",
+  "impls": {
+    "d862affc38f30c05541fe6bb9dcf43459bdcd003c1b971ad3df9a8825498c2c7": {
+      "address": "0x59F4ec8bad8F993eb051d369Ed528D0Cd5336ffD",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "zos-lib/contracts/Initializable.sol"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "zos-lib/contracts/Initializable.sol"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "zos-lib/contracts/Initializable.sol"
+          },
+          {
+            "contract": "Ownable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "openzeppelin-eth/contracts/ownership/Ownable.sol"
+          },
+          {
+            "contract": "Ownable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "openzeppelin-eth/contracts/ownership/Ownable.sol"
+          },
+          {
+            "contract": "Unlock",
+            "label": "grossNetworkProduct",
+            "type": "t_uint256",
+            "src": "contracts/Unlock.sol"
+          },
+          {
+            "contract": "Unlock",
+            "label": "totalDiscountGranted",
+            "type": "t_uint256",
+            "src": "contracts/Unlock.sol"
+          },
+          {
+            "contract": "Unlock",
+            "label": "locks",
+            "type": "t_mapping(unknown,t_struct(LockBalances)4_storage)",
+            "src": "contracts/Unlock.sol"
+          },
+          {
+            "contract": "Unlock",
+            "label": "globalBaseTokenURI",
+            "type": "t_string",
+            "src": "contracts/Unlock.sol"
+          },
+          {
+            "contract": "Unlock",
+            "label": "globalTokenSymbol",
+            "type": "t_string",
+            "src": "contracts/Unlock.sol"
+          }
+        ],
+        "types": {
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_struct(LockBalances)4_storage": {
+            "label": "LockBalances",
+            "members": [
+              {
+                "label": "deployed",
+                "type": "t_bool"
+              },
+              {
+                "label": "totalSales",
+                "type": "t_uint256"
+              },
+              {
+                "label": "yieldedDiscountTokens",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_mapping(unknown,t_struct(LockBalances)4_storage)": {
+            "label": "LockBalances)"
+          },
+          "t_string": {
+            "label": "string"
+          }
+        }
+      }
+    }
+  },
+  "proxies": [],
+  "admin": {
+    "address": "0x845b8BDc2199A9F692aD35c47B4b8d7460477f29"
+  }
+}

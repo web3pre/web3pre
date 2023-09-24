@@ -1,0 +1,11 @@
+development.sqlite3
+/config/config.user.js
+
+# testing
+/coverage
+
+# typescript build artifacts
+/build
+
+# .env files
+.env*
