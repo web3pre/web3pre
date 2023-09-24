@@ -17,6 +17,12 @@ const configureUnlock = (defaultPaywallConfig, passport, config = {}) => {
     config.providers = {}
   }
 
+  if (!config.providers[8453]) {
+    // eslint-disable-next-line no-param-reassign
+    config.providers[8453] =
+      'https://mainnet.base.org'
+  }
+
   if (!config.providers[1]) {
     // eslint-disable-next-line no-param-reassign
     config.providers[1] =
