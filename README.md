@@ -7,6 +7,12 @@ This project makes use of the following technologies:
 
 ## Live url: http://18.237.73.29/example-ui
 
+#### TODO: buildl support for more than 1 concurrent meeting.
+#### TODO: buildl support jitsi.
+#### TODO: buildl zoom native app, replace pipedream.
+
+
+
 ## Chain: Base (mainnet)
 f'it we do it live!
 ## Token Gate: Unlock Protocol
